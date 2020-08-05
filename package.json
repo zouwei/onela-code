@@ -1,0 +1,32 @@
+{
+  "name": "onela-tools",
+  "version": "1.0.0",
+  "description": "onela-tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouwei/onela-tools.git"
+  },
+  "author": "huzou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zouwei/onela-tools/issues"
+  },
+  "homepage": "https://github.com/zouwei/onela-tools#readme",
+  "dependencies": {
+    "fs": "^0.0.2",
+    "iconv-lite": "^0.4.24",
+    "mustache": "^2.3.2",
+    "mysql": "^2.17.1",
+    "onela": "^2.4.5",
+    "pg": "^7.12.1",
+    "sqlite3": "^4.1.0",
+    "tedious": "^2.7.1",
+    "xmlbuilder": "^13.0.2"
+  },
+  "devDependencies": {
+  }
+}

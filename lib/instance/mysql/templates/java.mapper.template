@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="{{name_space}}.dao{{dataSource}}.{{class_name}}Mapper">
+
+	<!-- 结果模型映射 -->
+    <resultMap id="BaseResultMap" type="{{name_space}}.api.model{{dataSource}}.{{class_name}}">
+{{content_str}}
+    </resultMap>
+
+	<!-- 新增数据 -->
+	<insert id="insertEntity" parameterType="{{name_space}}.api.model{{dataSource}}.{{class_name}}">
+		insert into {{table_name}}
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+{{insert_field}}
+				valid
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+{{values_content}}
+				1
+		</trim>
+	</insert>
+
+	<!-- 批量新增数据 -->
+	<insert id="insertListForBatch" parameterType="java.util.List">
+		insert into {{table_name}}
+		({{insert_cloumns}})
+		values
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				{{insert_batch_field}}
+			)
+		</foreach>
+	</insert>
+
+	<!-- 根据id查询实体对象 -->
+	<select id="findEntityListById"  resultMap="BaseResultMap">
+		select * from  {{table_name}} where valid=1 and id =
+		#{id,jdbcType=VARCHAR}
+	</select>
+
+	<!-- 根据id列表查询实体对象列表 -->
+	<select id="findEntityListByIds"  resultMap="BaseResultMap">
+		select * from  {{table_name}} where  valid=1 and 
+		id in
+		<foreach close=")" collection="list" index="index"
+			item="id" open="(" separator=",">
+			#{id,jdbcType=VARCHAR}
+		</foreach>
+		ORDER BY FIELD
+        <foreach collection="list" item="id" separator="," open="( id," close=")">
+           #{id,jdbcType=VARCHAR}
+        </foreach>
+	</select>
+
+    <!-- 查询记录总数 -->
+	<select id="countRecords" parameterType="Map" resultType="java.util.HashMap">
+		select id as 'key', count(1) as 'value' from  {{table_name}} 
+		where valid=1
+		<if test="map.createdTime != null ">
+			and create_time <![CDATA[ >= ]]> 
+			DATE_FORMAT(#{map.created_time,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s')
+		</if>
+		<if test="map.createdTime != null ">
+			and created_time <![CDATA[ <= ]]> 
+			DATE_FORMAT(#{map.created_time,jdbcType=VARCHAR},'%Y-%m-%d %H:%i:%s')
+		</if>
+		group by created_time desc
+	</select>
+
+    <!-- 查询记录列表 -->
+	<select id="queryEntityList"  resultMap="BaseResultMap"
+	 parameterType="{{name_space}}.api.model{{dataSource}}.dto.{{class_name}}Dto" >
+		select * from {{table_name}}  where valid=1
+{{where_query_record}}
+		order by created_time desc
+	</select>
+
+
+    <!-- 查询记录存在的列表 -->
+	<select id="queryExistEntityList"  resultMap="BaseResultMap" parameterType="{{name_space}}.api.model{{dataSource}}.dto.{{class_name}}Dto" >
+		select * from  {{table_name}}  where valid=1
+{{where_query_exist}}
+	</select>
+
+
+	<!-- 更新数据-->	
+	<update id="updateEntityById" >
+		UPDATE {{table_name}}
+		set update_id =#{update_id,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=VARCHAR} 
+		and valid=1
+	</update>
+</mapper>

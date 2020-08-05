@@ -1,0 +1,12 @@
+/**
+ * {{tableFullName}} ORM实例对象
+ */
+module.exports = exports = function (sequelize, DataTypes) {
+    const {{tableName}} = sequelize.define("{{tableName}}", {
+    {{#fields}}
+        {{name}}: {type: {{type}},"comment": "{{comment}}"{{other}}},
+    {{/fields}}
+    }, {timestamps: false, tableName: "{{tableFullName}}"});
+
+    return {{tableName}};
+};

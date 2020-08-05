@@ -1,0 +1,15 @@
+import { DataTypes, Model } from "https://deno.land/x/denodb/mod.ts";
+
+//员工实体
+class {{className}} extends Model {
+  //表名
+  static table = "{{tableFullName}}";
+  //字段
+  static fields = {
+    {{#fields}}
+    {{name}}: { type: DataTypes.{{type}}{{other}}},     // {{comment}}
+    {{/fields}}
+  };
+}
+
+export default {{className}};

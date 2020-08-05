@@ -1,0 +1,21 @@
+/**
+ * {{tableFullName}} ORM实例对象
+ */
+module.exports = exports = function (OnelaBaseModel) {
+    class {{className}} extends OnelaBaseModel {
+        // 可以在此自定义扩展方法（默认封装没有的方法）
+    }
+
+    // 【重要】单例模式，数据表配置
+    {{className}}.configs = {
+        fields: [
+            {{#fields}}
+            {"name": "{{name}}", "type": "{{type}}", "default": {{default}}, "comment": "{{comment}}"{{other}}},
+            {{/fields}}
+        ],
+        tableName: "{{tableFullName}}",
+        engine: "{{engine}}"
+    };
+
+    return {{className}};
+};

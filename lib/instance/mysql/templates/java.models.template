@@ -1,0 +1,13 @@
+package {{nameSpace}};
+
+import java.sql.Timestamp;
+
+/**
+ * {{tableFullName}} ORM实例对象
+ * @author {{author}}
+ */
+public class {{className}} {
+{{privateStr}}
+{{publicStr}}
+}
+
