@@ -1,21 +1,22 @@
 {
-  "name": "onela-tools",
+  "name": "onela-code",
   "version": "1.0.0",
-  "description": "onela-tools",
+  "description": "onela-code，为项目而生！",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zouwei/onela-tools.git"
+    "url": "git+https://github.com/zouwei/onela-code.git"
   },
-  "author": "huzou",
+  "author": "胡邹",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zouwei/onela-tools/issues"
+    "url": "https://github.com/zouwei/onela-code/issues"
   },
-  "homepage": "https://github.com/zouwei/onela-tools#readme",
+  "homepage": "https://github.com/zouwei/onela-code#readme",
   "dependencies": {
     "fs": "^0.0.2",
     "iconv-lite": "^0.4.24",
