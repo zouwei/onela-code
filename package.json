@@ -1,12 +1,11 @@
 {
   "name": "onela-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "onela-code，为项目而生！",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zouwei/onela-code.git"
@@ -19,15 +18,14 @@
   "homepage": "https://github.com/zouwei/onela-code#readme",
   "dependencies": {
     "fs": "^0.0.2",
-    "iconv-lite": "^0.4.24",
-    "mustache": "^2.3.2",
-    "mysql": "^2.17.1",
+    "iconv-lite": "^0.6.2",
+    "mustache": "^4.0.1",
+    "mysql": "^2.18.1",
     "onela": "^2.4.5",
-    "pg": "^7.12.1",
-    "sqlite3": "^4.1.0",
-    "tedious": "^2.7.1",
-    "xmlbuilder": "^13.0.2"
+    "pg": "^8.3.0",
+    "sqlite3": "^5.0.0",
+    "tedious": "^9.1.0",
+    "xmlbuilder": "^15.1.1"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
