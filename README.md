@@ -89,6 +89,17 @@ let javaMappersParas = {
 }
 console.log(tools.makeMappers(javaModelsParas));         // Auto自动化构建项目代码
 
+// 生成java-dao代码
+let javaDaoParas = {
+    "language": "java",          // 生成代码语言版本
+    "path": "./dist/java.dao/",            //输出文件路径，指向到目录即可，结尾“/”
+    "dataSource": "one",         // 数据源标识
+    //可选参数，否则会填写默认值【用来描述注释】
+    "author": "胡邹",
+    "nameSpace": "com.mySpaceName.myProject"        // 命名空间
+}
+console.log(tools.makeDaos(javaDaoParas));         // 执行
+
 ~~~
 
 

@@ -1,0 +1,68 @@
+package {{nameSpace}}{{dataSource}};
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Repository
+public interface {{className}}Mapper {
+
+    /**
+     * 新增实体对象
+     * @param entity
+     * @return
+     */
+    int insertEntity({{className}} entity);
+
+    /**
+     * 批量新增
+     * @param list 标签实体列表
+     * @return
+     */
+    int insertListForBatch(@Param(value = "list") List<{{className}}> list);
+
+    /**
+     * 根据id查询实体对象
+     * @param id
+     * @return
+     */
+    {{className}} findEntityById(@Param("id") String id);
+
+    /**
+     * 根据主键id列表查询实体数据信息
+     * @param list
+     * @return
+     */
+    List<{{className}}> findEntityListByIds(@Param(value = "list") List<String> list);
+
+
+    /**
+     * 通过条件统计分组
+     * @return
+     */
+    List<HashMap<String,Object>> countRecords(@Param(value="map") Map<String,String> map);
+
+//    /**
+//     * 根据条件查询实体对象列表
+//     * @param dto
+//     * @return
+//     */
+//    List<{{className}}> queryEntityList({{className}}Dto dto);
+
+//    /**
+//     * 查询记录存在的列表
+//     * @param dto
+//     * @return
+//     */
+//    {{className}} queryExistEntityList({{className}}Dto dto);
+
+    /**
+     * 更新实体信息（需要根据实际业务定制修改）
+     * @param id
+     * @param update_id
+     */
+    void updateEntityById(@Param("id") String id, @Param("update_id") String update_id);
+
+}
