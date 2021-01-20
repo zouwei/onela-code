@@ -1,0 +1,20 @@
+using System;
+using System.Text;
+using DYData.Dapper;
+using Newtonsoft.Json;
+
+namespace {{nameSpace}}
+{
+    [TableInfo(PrimaryKey = "{{primaryKey}}", TableName = "{{tableFullName}}")]
+    [JsonObject]
+    public class {{tableFullName}}
+    {
+        {{#fields}}
+        /// <summary>
+        /// {{comment}}
+        /// </summary>
+        public {{type}} {{name}} { get; set; }
+
+        {{/fields}}
+    }
+}

@@ -100,6 +100,18 @@ let javaDaoParas = {
 }
 console.log(tools.makeDaos(javaDaoParas));         // 执行
 
+// 生成csharp-models代码
+let csharpModelsParas = {
+    "language": "csharp",          		// 生成代码语言版本
+    "path": "./dist/csharp.models/",      //输出文件路径，指向到目录即可，结尾“/”
+    //可选参数，否则会填写默认值【用来描述注释】
+    "author": "胡邹",
+    "nameSpace": "mySpaceName.myProject"        // 命名空间
+};
+console.log(tools.makeModels(csharpModelsParas));            // Auto自动化构建项目代码
+
+
+
 ~~~
 
 
