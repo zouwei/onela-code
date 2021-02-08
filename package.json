@@ -1,6 +1,6 @@
 {
   "name": "onela-code",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "onela-code，为项目而生！",
   "main": "index.js",
   "scripts": {
