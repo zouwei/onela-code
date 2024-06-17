@@ -32,7 +32,7 @@ npm i
 const DBCONFIG = [
     {
         "engine": "default",    // 数据库实例引擎，默认default即可
-        "type": "mysql",        // 数据库类型：暂时只支持mysql（可扩展到其他数据库）
+        "type": "mysql",        // 数据库类型：暂时只支持：mysql、postgresql（可扩展到其他数据库）
         "value": {
             "connectionLimit": 5,               // 连接池大小(工具项目此参数无所谓)
             "host": "127.0.0.1",                // 数据库host

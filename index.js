@@ -32,7 +32,7 @@ class OnelaTools {
         try {
             console.debug(`${database} path %s match successfully`, modePath);
             let am = require(modePath);
-            console.log("引起用文件...", am);
+            console.log("引用文件...", am);
             mod = new am(self.databaseConfig);          // 实例化对象
         } catch (ex) {
             console.log('ex', ex)
