@@ -81,6 +81,25 @@ class OnelaTools {
         });
     }
 
+    /**
+     * 构建makeDaos映射层代码
+     * @param {*} args 
+     */
+     makeDaos(args) {
+
+        let self = this;
+        const databaseConfig = self.databaseConfig; // 读取数据库结构
+        // 获取组建
+        return self.getCostruireAM(databaseConfig.type).then(mod => {
+            // 第二步，从组建中执行方法
+            return mod.makeDaos(args);
+        }).then(data => {
+            return Promise.resolve(data);           // 
+        }).catch(ex => {
+            return Promise.reject(ex);
+        });
+    }
+
 }
 
 

@@ -45,19 +45,11 @@ const DBCONFIG = [
 ];
 
 // 项目
-const { OnelaTools } = require("../index.js");	// 引入工具代码（入口文件）
+const { OnelaTools } = require("./index.js");	// 引入工具代码（入口文件）
 // 实例化工具模型
 const tools = new OnelaTools(DBCONFIG[0]);		// 取数据源的第一个
 
-// 生成java-models代码
-let javaModelsParas = {
-    "language": "java",          		// 生成代码语言版本
-    "path": "./dist/java.models/",      //输出文件路径，指向到目录即可，结尾“/”
-    //可选参数，否则会填写默认值【用来描述注释】
-    "author": "胡邹",
-    "nameSpace": "com.mySpaceName.myProject.api.model"        // 命名空间
-};
-console.log(tools.makeModels(javaModelsParas));            // Auto自动化构建项目代码
+// *************************************** Nodejs Code ************************************************
 
 // 生成node-model（Sequelize ORM框架代码）
 let nodeModelsParas = {
@@ -78,6 +70,17 @@ let nodeModelsOnelaParas = {
 };
 console.log(tools.makeModels(nodeModelsOnelaParas));         // Auto自动化构建项目代码
 
+// *************************************** Java Code ************************************************
+// 生成java-models代码
+let javaModelsParas = {
+    "language": "java",          		// 生成代码语言版本
+    "path": "./dist/java.models/",      //输出文件路径，指向到目录即可，结尾“/”
+    //可选参数，否则会填写默认值【用来描述注释】
+    "author": "胡邹",
+    "nameSpace": "com.mySpaceName.myProject.api.model"        // 命名空间
+};
+console.log(tools.makeModels(javaModelsParas));            // Auto自动化构建项目代码
+
 // 生成java-mapper代码
 let javaMappersParas = {
     "language": "java",          		// 生成代码语言版本
@@ -87,7 +90,7 @@ let javaMappersParas = {
     "author": "胡邹",
     "nameSpace": "com.mySpaceName.myProject"        // 命名空间
 }
-console.log(tools.makeMappers(javaModelsParas));         // Auto自动化构建项目代码
+console.log(tools.makeMappers(javaMappersParas));         // Auto自动化构建项目代码
 
 // 生成java-dao代码
 let javaDaoParas = {
@@ -100,6 +103,8 @@ let javaDaoParas = {
 }
 console.log(tools.makeDaos(javaDaoParas));         // 执行
 
+
+// *************************************** C# Code ************************************************
 // 生成csharp-models代码
 let csharpModelsParas = {
     "language": "csharp",          		// 生成代码语言版本
