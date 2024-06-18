@@ -10,17 +10,17 @@
 ### 使用帮助
 
 ~~~shell
-第一步：克隆代码
+# 第一步：克隆代码
 git clone https://github.com/zouwei/onela-tools.git
 
-第二步：进入项目根目录
+# 第二步：进入项目根目录
 cd onela-tools
 
-第三步：安装工程依赖
+# 第三步：安装工程依赖
 npm i
 
-第四步：配置调用
-下面给出单独的调用代码
+# 第四步：配置调用
+# 下面给出单独的调用代码
 ~~~
 
 **调用示例代码**
@@ -126,10 +126,8 @@ let csharpModelsParas = {
 };
 console.log(tools.makeModels(csharpModelsParas));            // Auto自动化构建项目代码
 
-
-
 ~~~
 
 
 
-根据需要调用，也可自行进行二次开发，构建你想要的代码。
+可以根据需要调用，也可自行进行二次开发，构建你想要的代码。
